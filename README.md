@@ -1,52 +1,59 @@
 # React Native Todo App
 
-A simple Todo application built with React Native that allows users to manage their tasks.
+A simple Todo application built with React Native and Next.js that allows users to manage their tasks with a clean, modern interface.
 
 ## Features
 
-- Display a list of predefined tasks
-- Add new tasks through a form interface
-- Clean and intuitive user interface
-- Safe area handling for different device sizes
+- Add and manage tasks with duplicate checking
+- Mark tasks as complete/incomplete
+- Navigate between Home and About pages
+- Modern purple theme with consistent styling
+- Responsive design for web platforms
+- Easter egg in About page
 
 ## Project Structure
 
-The application consists of three main components:
+```
+app/
+├── (tabs)/
+│   └── index.tsx         # Main navigation handler
+├── screens/
+│   ├── HomePage.tsx      # Main tasks screen
+│   └── AboutPage.tsx     # About screen with easter egg
+├── components/
+│   ├── ToDoList.tsx      # Task list display
+│   └── ToDoForm.tsx      # New task input form
+└── types/
+    └── navigation.ts     # Type definitions
+```
 
-- `index.jsx`: Main application component that manages state and component composition
-- `ToDoList.jsx`: Displays the list of tasks
-- `ToDoForm.jsx`: Handles the addition of new tasks
+## Components
 
-## Implementation Details
+### HomePage
 
-### State Management
+- Displays the main task interface
+- Manages task state and interactions
+- Provides navigation to About page
 
-- Uses React's useState hook for managing the task list
-- Tasks are stored as an array in the application's state
-- Each task contains text and completion status
+### AboutPage
 
-### Components
+- Shows app information
+- Contains a hidden easter egg
+- Includes creator credits and current date
 
-#### App Component (index.jsx)
+### ToDoList
 
-- Serves as the main container component
-- Manages the task list state
-- Handles the addition of new tasks
-- Composes the ToDoList and ToDoForm components
+- Renders scrollable task list
+- Handles task completion toggling
+- Shows task status with visual feedback
 
-#### ToDoList Component
+### ToDoForm
 
-- Receives tasks as props
-- Renders tasks in a scrollable list
-- Each task is displayed with appropriate styling
+- Provides task input interface
+- Prevents duplicate task entries
+- Clear input after submission
 
-#### ToDoForm Component
-
-- Provides input field for new tasks
-- Handles task submission
-- Clears input after task addition
-
-## Setup and Installation
+## Setup
 
 1. Clone the repository
 2. Install dependencies:
@@ -55,15 +62,16 @@ The application consists of three main components:
 npm install
 ```
 
-3. Run the application:
+3. Run the development server:
 
 ```bash
-npm start
+npm run dev
 ```
 
-## Technologies Used
+## Technologies
 
-- React Native
+- Next.js
+- React Native Web
+- TypeScript
 - React Hooks (useState)
-- JavaScript/JSX
-- React Native StyleSheet for styling
+- React Native StyleSheet
